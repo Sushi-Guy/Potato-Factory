@@ -19,30 +19,38 @@ public class PotatoData : MonoBehaviour
     [SerializeField] private MutationTier currentMutation = MutationTier.None;
 
     [Header("Mutation Materials")]
-    [Tooltip("Create and drag a transparent Gold material here!")]
     [SerializeField] private Material goldMaterial;
     [SerializeField] private Material diamondMaterial;
     [SerializeField] private Material rainbowMaterial;
 
     void Start()
     {
-        Renderer potatoRenderer = GetComponentInChildren<Renderer>();
+        // 1. Grab ALL renderers inside this prefab (crucial for multi-mesh objects like fries)
+        Renderer[] potatoRenderers = GetComponentsInChildren<Renderer>();
         
-        if (potatoRenderer != null)
+        // 2. Loop through every single fry piece/mesh found
+        foreach (Renderer rand in potatoRenderers)
         {
-            switch (currentMutation)
+            if (rand != null)
             {
-                case MutationTier.Gold:
-                    if (goldMaterial != null) potatoRenderer.material = goldMaterial;
-                    break;
-                    
-                case MutationTier.Diamond:
-                    if (diamondMaterial != null) potatoRenderer.material = diamondMaterial;
-                    break;
-                    
-                case MutationTier.Rainbow:
-                    if (rainbowMaterial != null) potatoRenderer.material = rainbowMaterial;
-                    break;
+                switch (currentMutation)
+                {
+                    case MutationTier.Gold:
+                        // Option A: If you are using the custom Material approach:
+                        if (goldMaterial != null) rand.material = goldMaterial;
+                        
+                        // Option B: If you are using the flat color tint approach:
+                        // rand.material.color = new Color(1f, 0.84f, 0f, 0.75f);
+                        break;
+                        
+                    case MutationTier.Diamond:
+                        if (diamondMaterial != null) rand.material = diamondMaterial;
+                        break;
+                        
+                    case MutationTier.Rainbow:
+                        if (rainbowMaterial != null) rand.material = rainbowMaterial;
+                        break;
+                }
             }
         }
     }

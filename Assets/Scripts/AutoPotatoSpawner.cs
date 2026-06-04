@@ -8,7 +8,7 @@ public class AutoPotatoSpawner : MonoBehaviour
     [SerializeField] private float spawnInterval = 2f;
 
     [Header("Mutation Chances (%)")]
-    [Range(0f, 100f)] [SerializeField] private float goldChance = 10f;
+    [Range(0f, 100f)] [SerializeField] private float goldChance = 5f;
 
     private float timer;
 

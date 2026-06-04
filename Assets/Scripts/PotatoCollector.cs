@@ -44,4 +44,19 @@ public class PotatoCollector : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    // 1. Check if the player has enough cash
+    public bool CanAfford(int cost)
+    {
+        // Replace 'totalMoney' with the exact name of your variable if it's named differently!
+        return TotalMoney >= cost; 
+    }
+
+    // 2. Spend the cash and trigger the UI update chain
+    public void SpendCash(int cost)
+    {
+        TotalMoney -= cost;
+
+        UIManager.Instance.UpdateBalanceDisplay(TotalMoney);
+    }
 }
