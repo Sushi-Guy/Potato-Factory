@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
+
         // 1. Gather Keyboard Input
         inputX = Input.GetAxisRaw("Horizontal");
         inputZ = Input.GetAxisRaw("Vertical");
@@ -42,6 +44,12 @@ public class FirstPersonController : MonoBehaviour
         // 2. Gather Mouse Input (Multiply by Time to keep it smooth regardless of framerate)
         mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime * 5;
         mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        if (BuildManager.IsShopOpen)
+        {
+            mouseX = 0f;
+            mouseY = 0f;
+        }
 
         // 3. Calculate Looking Up/Down (Clamp it so you can't flip your neck upside down)
         xRotation -= mouseY;

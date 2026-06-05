@@ -2,33 +2,27 @@ using UnityEngine;
 
 public class ShopButtonHelper : MonoBehaviour
 {
-    [Header("Linked Manager")]
-    public BuildManager buildManager;
+    private BuildManager buildManager;
 
     [Header("This Item's Settings")]
     public GameObject realPrefab;
     public GameObject ghostPrefab;
     public int cost = 150;
+    
+    [Tooltip("How high to lift THIS specific ghost model so it sits flat.")]
+    public float yOffset = 0f; // <--- ADD THIS VARIABLE
 
     void Start()
     {
-        // Automatically find the BuildManager in your scene
         buildManager = Object.FindFirstObjectByType<BuildManager>();
     }
 
-    // This is a 0-argument function that WILL show up perfectly in your dropdown!
     public void SendItemToBuildManager()
     {
-        // THIS LINE WILL PRINT TO YOUR CONSOLE TO PROVE THE BUTTON IS WORKING!
-        Debug.Log($"Button clicked! Sending {realPrefab?.name} to manager.");
-
         if (buildManager != null)
         {
-            buildManager.SelectItemToBuy(realPrefab, ghostPrefab, cost);
-        }
-        else
-        {
-            Debug.LogError("The buildManager variable is EMPTY! Drag your GameManager into the slot.");
+            // Send the custom yOffset over to the manager along with the prefabs
+            buildManager.SelectItemToBuy(realPrefab, ghostPrefab, cost, yOffset);
         }
     }
 }

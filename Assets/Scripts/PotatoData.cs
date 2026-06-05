@@ -7,7 +7,7 @@ public class PotatoData : MonoBehaviour
 
     [Header("Potato Custom Base Stats")]
     [SerializeField] private string potatoName = "Potato";
-    [SerializeField] private double cashValue = 2.0;
+    [SerializeField] public double cashValue = 2.0;
 
     [Header("Processing State")]
     [SerializeField] private bool startsAsWashed = false;

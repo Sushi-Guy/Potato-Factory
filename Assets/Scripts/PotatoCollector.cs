@@ -1,62 +1,64 @@
 using UnityEngine;
+using TMPro;
 
 public class PotatoCollector : MonoBehaviour
 {
-    [Header("Economy Settings")]
-    [SerializeField] private double potatoValue = 2;
+    [Header("Collector Settings")]
+    [Tooltip("How much extra value this specific collector adds to a potato (e.g., a premium exit lane).")]
+    public int bonusValue = 0;
 
-    // This is global, meaning any UI or upgrade script can read this value later
-    public static double TotalMoney { get; private set; } = 0; 
+    [Header("Local UI (Optional)")]
+    [Tooltip("If you want a little floating text canvas above this specific box showing its earnings.")]
+    public TextMeshProUGUI localScoreText;
 
+    private int cashGeneratedHere = 0;
+    private BuildManager buildManager;
+
+    void Start()
+    {
+        // Automatically find the master build manager in the scene to access the main economy
+        buildManager = Object.FindFirstObjectByType<BuildManager>();
+        UpdateLocalUI();
+    }
+
+    // This is called automatically when a potato physics object physical rolls into the box trigger
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Potato"))
         {
-            double earnedAmount = 0;
-            string potatoName = "Unknown Potato";
+            // FIX: Successfully updated to look for your PotatoData script!
+            PotatoData potatoScript = other.GetComponent<PotatoData>();
+            int potatoValue = 10; // Default fallback value if it can't find the script
 
-            // Read data directly from the potato instance
-            PotatoData potato = other.GetComponent<PotatoData>();
-
-            if (potato != null)
+            if (potatoScript != null)
             {
-                earnedAmount = potato.GetValue();
-                potatoName = potato.GetName();
-            }
-            else
-            {
-                // Fallback values if the script component is missing
-                earnedAmount = 2;
-                potatoName = "Potato";
+                // NOTE: If the integer inside your PotatoData script is named 
+                // something else (like 'price' or 'value'), change 'cashValue' below to match it!
+                potatoValue = (int)potatoScript.cashValue;
             }
 
-            // 1. Accumulate wealth
-            TotalMoney += earnedAmount;
+            // Calculate final payout with this collector's unique bonus modifier
+            int finalPayout = potatoValue + bonusValue;
+            cashGeneratedHere += finalPayout;
 
-            // 2. Push updates straight to our new screen UI panels
-            if (UIManager.Instance != null)
+            // Send the earnings straight up to the master player wallet!
+            if (buildManager != null && buildManager.playerWallet != null)
             {
-                UIManager.Instance.UpdateBalanceDisplay(TotalMoney);
-                UIManager.Instance.DisplayTransactionNotify(earnedAmount, potatoName);
+                buildManager.playerWallet.AddGlobalCash(finalPayout);
             }
 
-            // 3. Vaporize physical potato clone
+            UpdateLocalUI();
+
+            // Vaporize the potato object so it doesn't pile up and lag the engine
             Destroy(other.gameObject);
         }
     }
 
-    // 1. Check if the player has enough cash
-    public bool CanAfford(int cost)
+    void UpdateLocalUI()
     {
-        // Replace 'totalMoney' with the exact name of your variable if it's named differently!
-        return TotalMoney >= cost; 
-    }
-
-    // 2. Spend the cash and trigger the UI update chain
-    public void SpendCash(int cost)
-    {
-        TotalMoney -= cost;
-
-        UIManager.Instance.UpdateBalanceDisplay(TotalMoney);
+        if (localScoreText != null)
+        {
+            localScoreText.text = $"${cashGeneratedHere}";
+        }
     }
 }

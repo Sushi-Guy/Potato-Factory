@@ -667,6 +667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1995140027979711482}
   - component: {fileID: 5394969900654614012}
+  - component: {fileID: 3185327091875826086}
   m_Layer: 7
   m_Name: Conveyor
   m_TagString: Untagged
@@ -701,6 +702,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4562782719007119088}
   m_Mesh: {fileID: 0}
+--- !u!114 &3185327091875826086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562782719007119088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b393c2195a8d5b948b308f57cae4392c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8712717148015478448
 GameObject:
   m_ObjectHideFlags: 0
