@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352130981297550701}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Ghost Auto Potato Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 6244992747078329818}
   - component: {fileID: 402154253992200236}
   - component: {fileID: 5614244999322857990}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 1144651718778775836}
   - component: {fileID: 1527352177902289500}
   - component: {fileID: 3586552328077865210}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 871938447697999104}
   - component: {fileID: 8141224508741465341}
   - component: {fileID: 4728297007346059093}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 6864066731135710471}
   - component: {fileID: 6296450500763179392}
   - component: {fileID: 2044224258319013408}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

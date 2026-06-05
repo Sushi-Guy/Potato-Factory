@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6155095324750974433}
   - component: {fileID: 437581593816353019}
   - component: {fileID: 3214595839975396757}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2304618380589615608}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Ghost Potato Collector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 5557439212370917526}
   - component: {fileID: 2836870453046411123}
   - component: {fileID: 4134515971458624172}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 492784849563253306}
   - component: {fileID: 4341206237511023559}
   - component: {fileID: 3504334401631052054}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 3841553745562567358}
   - component: {fileID: 2495873365365885535}
   - component: {fileID: 7529190713379598668}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 6553343377993949245}
   - component: {fileID: 3195491469133206329}
   - component: {fileID: 5186052363897201391}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

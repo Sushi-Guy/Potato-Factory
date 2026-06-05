@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 397380127182228311}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Ghost Peeler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 6170336705051755905}
   - component: {fileID: 4581190031737663570}
   - component: {fileID: 1491725781514888619}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 3137996178574998488}
   - component: {fileID: 3833455618052056078}
   - component: {fileID: 3513958590087535427}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 803643403839311736}
   - component: {fileID: 7309359041361941576}
   - component: {fileID: 9175130871447247415}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 5911701961445103636}
   - component: {fileID: 3975313030755616479}
   - component: {fileID: 3101643771645171486}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
